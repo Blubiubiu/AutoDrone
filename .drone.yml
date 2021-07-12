@@ -9,7 +9,7 @@ pipeline:
       - 'npm install'
       - 'npm run build'
     when:
-      branch: master
+      branch: main
   public-online:      
     image: plugins/docker 
     volumes:
