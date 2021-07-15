@@ -1,16 +1,14 @@
-# workspace:
-#   base: /drone/src
-#   path: ./
-pipeline:
-  
-  build-master:
+kind: pipeline
+name: api
+steps:
+  - name: build-master
     image: 'node:10.6.0'
     commands:
       - 'npm install'
       - 'npm run build'
     when:
       branch: test
-  public-online:      
+  - name: public-online   
     image: plugins/docker 
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock 
