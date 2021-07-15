@@ -7,7 +7,7 @@ steps:
       - 'npm install'
       - 'npm run build'
     when:
-      branch: test
+      branch: master
   - name: public-online   
     image: plugins/docker 
     volumes:
@@ -18,7 +18,7 @@ steps:
       # - 'docker tag docker_test_02 registry.cn-beijing.aliyuncs.com/my_docker_test_01/docker_test_02'
       # - 'docker push registry.cn-beijing.aliyuncs.com/my_docker_test_01/docker_test_02'
     when: 
-      branch: test  
+      branch: master  
   # rancher-online:
   #   image: peloton/drone-rancher
   #   url: 'https://rancher.11vx.cn'
