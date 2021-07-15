@@ -9,7 +9,7 @@ pipeline:
       - 'npm install'
       - 'npm run build'
     when:
-      branch: main
+      branch: test
   public-online:      
     image: plugins/docker 
     volumes:
@@ -20,7 +20,7 @@ pipeline:
       # - 'docker tag docker_test_02 registry.cn-beijing.aliyuncs.com/my_docker_test_01/docker_test_02'
       # - 'docker push registry.cn-beijing.aliyuncs.com/my_docker_test_01/docker_test_02'
     when: 
-      branch: main  
+      branch: test  
   # rancher-online:
   #   image: peloton/drone-rancher
   #   url: 'https://rancher.11vx.cn'
